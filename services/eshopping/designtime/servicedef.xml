@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="eshopping" type="DataService" springFile="eshopping.spring.xml">
+    <operation operationType="nativequery" name="Ordered">
+        <parameter name="data" typeRef="java.lang.String" isList="false"/>
+        <parameter name="data2" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingOrderedrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="cancelled">
+        <parameter name="data" typeRef="java.lang.String" isList="false"/>
+        <parameter name="data1" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingcancelledrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="_OrderedLists">
+        <parameter name="LoggedinUserID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshopping_OrderedListsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="_Total_InCart">
+        <parameter name="LoggedinUserID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshopping_Total_InCartrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="_Total_Price">
+        <parameter name="data" typeRef="java.lang.String" isList="false"/>
+        <parameter name="user" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshopping_Total_PricertnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.User">
+            <element name="phone" typeRef="java.lang.String" allowNull="true"/>
+            <element name="street" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productBought" typeRef="java.lang.String" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" allowNull="true"/>
+            <element name="itemorders" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Itemorder" isList="true" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="landmark" typeRef="java.lang.String" allowNull="true"/>
+            <element name="pin" typeRef="java.lang.String" allowNull="true"/>
+            <element name="email" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productorders" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Productorder" isList="true" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.Itemorder">
+            <element name="product" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Product" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+            <element name="quantity" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="user" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.User" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.Product">
+            <element name="imgUrl" typeRef="java.lang.String" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="category" typeRef="java.lang.String" allowNull="true"/>
+            <element name="orderdetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Orderdetail" isList="true" allowNull="true"/>
+            <element name="price" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="itemorders" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Itemorder" isList="true" allowNull="true"/>
+            <element name="availability" typeRef="java.lang.Boolean" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.Productorder">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orderdetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Orderdetail" isList="true" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+            <element name="user" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.User" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.Orderdetail">
+            <element name="product" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Product" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productorder" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Productorder" allowNull="true"/>
+            <element name="quantity" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="eshoppingOrderedrtnType"/>
+        <dataobject javaType="eshoppingcancelledrtnType"/>
+        <dataobject javaType="eshopping_OrderedListsrtnType">
+            <element name="NAME" typeRef="java.lang.String"/>
+            <element name="PID" typeRef="java.lang.Integer"/>
+            <element name="ID" typeRef="java.lang.Integer"/>
+            <element name="STATUS" typeRef="java.lang.String"/>
+            <element name="QUANTITY" typeRef="java.lang.Integer"/>
+            <element name="PROD_IMG" typeRef="java.lang.String"/>
+        </dataobject>
+        <dataobject javaType="eshopping_Total_InCartrtnType">
+            <element name="TOTAL" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="eshopping_Total_PricertnType">
+            <element name="C1" typeRef="java.lang.String"/>
+        </dataobject>
+    </dataobjects>
+</service>

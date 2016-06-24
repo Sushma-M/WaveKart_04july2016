@@ -1,0 +1,32 @@
+<wm-partial data-ng-controller="topnavPageController" name="topnav" type="top-nav"> 
+    <wm-navbar name="navbar1"> 
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left"> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor caption="Home" name="homeButton" iconclass="glyphicon glyphicon-home" on-click="goToPage_Main" show="bind:Variables.loggedInUser.dataSet.roles !=&quot;admin&quot;"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor caption="Products" name="ProductsPage" iconclass="glyphicon glyphicon-tag" show="bind:Variables.loggedInUser.dataSet.roles!=&quot;admin&quot;" on-click="goToPage_ProductsList"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item5"> 
+                <wm-anchor on-click="goToPage_Admin" caption="Admin" iconclass="glyphicon glyphicon-user" name="AdminPage" accessroles="admin"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item6"> 
+                <wm-anchor caption="Login" iconclass="glyphicon glyphicon-log-in" name="Login" on-click="CommonLoginDialog.show" show="true" accessroles="Anonymous"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right"> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor on-click="goToPage_Cart" caption="My Cart" name="MyCart" iconclass="glyphicon glyphicon-shopping-cart" accessroles="user"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor caption="My Orders" name="MyOrders" iconclass="glyphicon glyphicon-list-alt" on-click="goToPage_Orders" accessroles="user"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item7"> 
+                <wm-anchor on-click="goToPage_Profile" caption="My Profile" iconclass="glyphicon glyphicon-user" name="MyProfile" accessroles="user"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item8"> 
+                <wm-anchor caption="Logout" iconclass="glyphicon glyphicon-log-out" name="Logout" on-click="logoutVariable" show="bind:Variables.loggedInUser.dataSet.isAuthenticated" accessroles="Authenticated"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+    </wm-navbar> 
+</wm-partial>

@@ -1,0 +1,52 @@
+<wm-partial data-ng-controller="CommonPageController" name="CommonPage">
+    <wm-view name="loginDialogView" class="dialog-view">
+        <wm-logindialog modal="true" name="CommonLoginDialog" on-error="CommonLoginDialogError($event, $scope)" on-success="CommonLoginDialogSuccess($event, $scope)" on-submit="loginVariable">
+            <wm-dialogheader name="loginheader" iconclass="glyphicon glyphicon-log-in" caption="Login"></wm-dialogheader>
+            <wm-dialogcontent name="logincontent">
+                <wm-form class="panel-default" name="loginform">
+                    <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="loginmessage"></wm-message>
+                    <wm-layoutgrid name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn name="gridcolumn1">
+                                <wm-composite name="usernamefield">
+                                    <wm-label class="col-md-3" caption="Username" name="usernamelabel"></wm-label>
+                                    <wm-container class="col-md-9" name="container1">
+                                        <wm-text placeholder="Enter Username" class="col-md-8 app-login-dialog-username" name="usernametext" autocomplete="off" autocorrect="off" autocapitalize="off" type="text" required="true"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn name="gridcolumn2">
+                                <wm-composite name="passwordfield">
+                                    <wm-label class="col-md-3" caption="Password" name="passwordlabel"></wm-label>
+                                    <wm-container class="col-md-9" name="container2">
+                                        <wm-text type="password" placeholder="Enter Password" class="col-md-8 app-login-dialog-password" name="passwordtext" autocomplete="off" autocorrect="off" autocapitalize="off" required="true"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                                <wm-list name="list1">
+                                    <wm-list-item name="list_item1">
+                                        <wm-label name="label3" caption="Note:" color="#999"></wm-label>
+                                    </wm-list-item>
+                                    <wm-list-item name="list_item2">
+                                        <wm-label name="testcredentials1" color="#999" caption="Use user@wavemaker.com/user for login as User."></wm-label>
+                                    </wm-list-item>
+                                    <wm-list-item name="list_item3">
+                                        <wm-label name="testcredentials2" color="#999" caption="Use admin@wavemaker.com/admin for login as User."></wm-label>
+                                    </wm-list-item>
+                                </wm-list>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-form>
+            </wm-dialogcontent>
+            <wm-dialogactions name="loginactions">
+                <wm-button class="btn-primary" caption="Sign in" name="loginbutton"></wm-button>
+            </wm-dialogactions>
+        </wm-logindialog>
+    </wm-view>
+</wm-partial>

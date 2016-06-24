@@ -1,0 +1,127 @@
+{
+  "name" : "eshopping",
+  "description" : "Queries for eshopping",
+  "queries" : [ {
+    "name" : "Ordered",
+    "query" : "update Itemorder set status=:data where status=:data2",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : true,
+    "queryParams" : [ {
+      "paramName" : "data",
+      "paramType" : "java.lang.String",
+      "testValue" : "Cancelled",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "data2",
+      "paramType" : "java.lang.String",
+      "testValue" : "In Cart",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingOrderedrtnType",
+    "returnTypeMetadata" : { }
+  }, {
+    "name" : "cancelled",
+    "query" : "update Itemorder set status=:data where id=:data1",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : true,
+    "queryParams" : [ {
+      "paramName" : "data",
+      "paramType" : "java.lang.String",
+      "testValue" : "Cancelled",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "data1",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "107",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingcancelledrtnType",
+    "returnTypeMetadata" : { }
+  }, {
+    "name" : "_OrderedLists",
+    "query" : "select  i.ID as id,p.ID as pid, p.NAME as name,i.QUANTITY as quantity,i.STATUS as status,p.IMG_URL as prod_img from ITEMORDER i,Product p where ( i.PRODUCT_ID=p.ID and i.status!='In Cart') and i.USER_ID=:LoggedinUserID",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "LoggedinUserID",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "12",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshopping_OrderedListsrtnType",
+    "returnTypeMetadata" : {
+      "NAME" : "java.lang.String",
+      "PID" : "java.lang.Integer",
+      "ID" : "java.lang.Integer",
+      "STATUS" : "java.lang.String",
+      "QUANTITY" : "java.lang.Integer",
+      "PROD_IMG" : "java.lang.String"
+    }
+  }, {
+    "name" : "_Total_InCart",
+    "query" : "select count(status) as total from Itemorder i where status= 'In Cart' and i.USER_ID=:LoggedinUserID",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "LoggedinUserID",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "16",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshopping_Total_InCartrtnType",
+    "returnTypeMetadata" : {
+      "TOTAL" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "_Total_Price",
+    "query" : "select sum(p.PRICE) from PRODUCT P,ITEMORDER I where P.ID=I.PRODUCT_ID and I.STATUS=:data and I.USER_ID =:user",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "data",
+      "paramType" : "java.lang.String",
+      "testValue" : "In Cart",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "user",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "12",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshopping_Total_PricertnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.lang.String"
+    }
+  } ]
+}

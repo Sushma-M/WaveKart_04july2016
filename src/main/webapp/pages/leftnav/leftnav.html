@@ -1,0 +1,19 @@
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="left-panel"> 
+    <wm-nav name="leftnavigation" type="pills" layout="stacked"> 
+        <wm-nav-item name="list_latestUpdate"> 
+            <wm-anchor caption="Smartphones" name="Smartphones" iconclass="glyphicon glyphicon-phone" on-click="ChangeCategory($event, $scope, 'Smartphones');goToPage_ProductsList"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_inTheNews"> 
+            <wm-anchor caption="Cameras" name="Cameras" iconclass="glyphicon glyphicon-camera" on-click="ChangeCategory($event, $scope, 'Cameras');goToPage_ProductsList"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_share"> 
+            <wm-anchor caption="Laptops" name="Laptops" iconclass="fa fa-laptop" on-click="ChangeCategory($event, $scope, 'Laptops');goToPage_ProductsList"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_help"> 
+            <wm-anchor caption="Peripherals" name="Peripherals" iconclass="glyphicon glyphicon-print" on-click="ChangeCategory($event, $scope, 'Peripherals');goToPage_ProductsList"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="nav_item5"> 
+            <wm-anchor name="Accessories" iconclass="glyphicon glyphicon-headphones" caption="Accessories" on-click="ChangeCategory($event, $scope, 'Accessories');goToPage_ProductsList"></wm-anchor> 
+        </wm-nav-item> 
+    </wm-nav> 
+</wm-partial>

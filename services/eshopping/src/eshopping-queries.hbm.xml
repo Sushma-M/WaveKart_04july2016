@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <sql-query name="Ordered">
+    <![CDATA[
+      update Itemorder set status=:data where status=:data2
+    ]]>
+  </sql-query>
+  <sql-query name="cancelled">
+    <![CDATA[
+      update Itemorder set status=:data where id=:data1
+    ]]>
+  </sql-query>
+  <sql-query name="_OrderedLists">
+    <![CDATA[
+      select  i.ID as id,p.ID as pid, p.NAME as name,i.QUANTITY as quantity,i.STATUS as status,p.IMG_URL as prod_img from ITEMORDER i,Product p where ( i.PRODUCT_ID=p.ID and i.status!='In Cart') and i.USER_ID=:LoggedinUserID
+    ]]>
+  </sql-query>
+  <sql-query name="_Total_InCart">
+    <![CDATA[
+      select count(status) as total from Itemorder i where status= 'In Cart' and i.USER_ID=:LoggedinUserID
+    ]]>
+  </sql-query>
+  <sql-query name="_Total_Price">
+    <![CDATA[
+      select sum(p.PRICE) from PRODUCT P,ITEMORDER I where P.ID=I.PRODUCT_ID and I.STATUS=:data and I.USER_ID =:user
+    ]]>
+  </sql-query>
+</hibernate-mapping>

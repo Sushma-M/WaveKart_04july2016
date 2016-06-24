@@ -1,0 +1,46 @@
+[ {
+  "name" : "Admin",
+  "type" : "PAGE"
+}, {
+  "name" : "Cart",
+  "type" : "PAGE"
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL"
+}, {
+  "name" : "Login",
+  "type" : "PAGE"
+}, {
+  "name" : "Main",
+  "type" : "PAGE"
+}, {
+  "name" : "Orders",
+  "type" : "PAGE"
+}, {
+  "name" : "Products",
+  "type" : "PAGE"
+}, {
+  "name" : "ProductsList",
+  "type" : "PAGE"
+}, {
+  "name" : "Profile",
+  "type" : "PAGE"
+}, {
+  "name" : "footer",
+  "type" : "PARTIAL"
+}, {
+  "name" : "header",
+  "type" : "PARTIAL"
+}, {
+  "name" : "leftnav",
+  "type" : "PARTIAL"
+}, {
+  "name" : "prodslistbycategory",
+  "type" : "PARTIAL"
+}, {
+  "name" : "rightnav",
+  "type" : "PARTIAL"
+}, {
+  "name" : "topnav",
+  "type" : "PARTIAL"
+} ]

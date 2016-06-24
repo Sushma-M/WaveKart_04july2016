@@ -1,0 +1,12 @@
+{
+  "navigationVariable1" : {
+    "operation" : "gotoPage",
+    "pageName" : "Cart",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "_id" : "wm-navigationVariable1-wm.NavigationVariable-1449038121267",
+    "name" : "navigationVariable1",
+    "owner" : "Page",
+    "pageTransitions" : "none"
+  }
+}

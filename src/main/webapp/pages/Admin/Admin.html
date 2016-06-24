@@ -1,0 +1,239 @@
+<wm-page name="page1" data-ng-controller="AdminPageController" pagetitle="Admin">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1" heading="Products">
+                    <wm-livegrid name="ProductLivegrid2" service="eshopping@Product" formlayout="inline">
+                        <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="ProductGrid2" dataset="bind:Variables.EshoppingProductData.dataSet" showrecordcount="true" gridsearch="true" class="panel-default">
+                            <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="imgUrl" caption="Img Url" type="string" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="category" caption="Category" type="string" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="price" caption="Price" type="double" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="description" caption="Description" type="string" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="name" caption="Name" type="string" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="availability" caption="Availability" type="boolean" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="glyphicon glyphicon-plus" title="New" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Details" name="ProductLiveform2" dataset="bind:Variables.EshoppingProductData.dataSet" formlayout="inline" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn show="hide" name="gridcolumn1" columnwidth="12">
+                                        <wm-form-field display-name="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" readonly="true" required="true" name="form_field1"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn show="show" name="gridcolumn2" columnwidth="12">
+                                        <wm-form-field display-name="Img Url" show="true" primary-key="false" generator="assigned" key="imgUrl" type="string" maxvalue="255" is-related="false" readonly="false" required="false" name="form_field2"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn show="show" name="gridcolumn3" columnwidth="12">
+                                        <wm-form-field display-name="Category" show="true" primary-key="false" generator="assigned" key="category" type="string" maxvalue="255" is-related="false" readonly="false" required="true" name="form_field3"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn show="show" name="gridcolumn4" columnwidth="12">
+                                        <wm-form-field display-name="Price" show="true" primary-key="false" generator="assigned" key="price" type="double" is-related="false" readonly="false" required="true" name="form_field4"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow4">
+                                    <wm-gridcolumn show="show" name="gridcolumn5" columnwidth="12">
+                                        <wm-form-field display-name="Description" show="true" primary-key="false" generator="assigned" key="description" type="string" maxvalue="255" is-related="false" readonly="false" required="true" name="form_field5"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn show="show" name="gridcolumn6" columnwidth="12">
+                                        <wm-form-field display-name="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" maxvalue="255" is-related="false" readonly="false" required="true" name="form_field6"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow6">
+                                    <wm-gridcolumn show="show" name="gridcolumn7" columnwidth="12">
+                                        <wm-form-field display-name="Availability" show="true" primary-key="false" generator="assigned" key="availability" type="boolean" is-related="false" readonly="false" required="true" name="form_field7"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2" heading="Users">
+                    <wm-livegrid name="UserLivegrid3" service="eshopping@User" formlayout="dialog">
+                        <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="UserGrid3" dataset="bind:Variables.EshoppingUserData.dataSet" gridsearch="true" class="panel-default">
+                            <wm-grid-column binding="id" caption="Id" type="integer" backgroundcolor="" textcolor="" primary-key="true" generator="identity" readonly="" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="landmark" caption="Landmark" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="phone" caption="Phone" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="pin" caption="Pin" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="email" caption="Email" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="street" caption="Street" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="name" caption="Name" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="productBought" caption="Product Bought" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="password" caption="Password" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="country" caption="Country" type="string" backgroundcolor="" textcolor="" primary-key="" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                            is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="city" caption="City" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="role" caption="Role" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="glyphicon glyphicon-plus" title="New" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Details" name="UserLiveform3" dataset="bind:Variables.EshoppingUserData.dataSet" formlayout="dialog" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn show="hide" name="gridcolumn8" columnwidth="12"></wm-gridcolumn>
+                                    <wm-gridcolumn show="show" name="gridcolumn9" columnwidth="12"></wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow9">
+                                    <wm-gridcolumn show="show" name="gridcolumn10" columnwidth="12">
+                                        <wm-form-field name="form_field9" displayname="Landmark" show="true" primary-key="false" generator="assigned" key="landmark" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow10">
+                                    <wm-gridcolumn show="show" name="gridcolumn11" columnwidth="12">
+                                        <wm-form-field name="form_field10" displayname="Phone" show="true" primary-key="false" generator="assigned" key="phone" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="15"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow11">
+                                    <wm-gridcolumn show="show" name="gridcolumn12" columnwidth="12">
+                                        <wm-form-field name="form_field11" displayname="Pin" show="true" primary-key="false" generator="assigned" key="pin" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12">
+                                    <wm-gridcolumn show="show" name="gridcolumn13" columnwidth="12">
+                                        <wm-form-field name="form_field12" displayname="Email" show="true" primary-key="false" generator="assigned" key="email" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13">
+                                    <wm-gridcolumn show="show" name="gridcolumn14" columnwidth="12">
+                                        <wm-form-field name="form_field13" displayname="Street" show="true" primary-key="false" generator="assigned" key="street" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow14">
+                                    <wm-gridcolumn show="show" name="gridcolumn15" columnwidth="12">
+                                        <wm-form-field name="form_field14" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow15">
+                                    <wm-gridcolumn show="show" name="gridcolumn16" columnwidth="12">
+                                        <wm-form-field name="form_field15" displayname="Product Bought" show="true" primary-key="false" generator="assigned" key="productBought" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text"
+                                        maxchars="255" inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow16">
+                                    <wm-gridcolumn show="show" name="gridcolumn17" columnwidth="12">
+                                        <wm-form-field name="form_field16" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow17">
+                                    <wm-gridcolumn show="show" name="gridcolumn18" columnwidth="12">
+                                        <wm-form-field name="form_field17" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-field name="form_field18" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255" inputtype="text"
+                            regexp=".*" placeholder="Enter value"></wm-form-field>
+                            <wm-form-field name="role" displayname="Role" show="true" primary-key="false" generator="assigned" key="role" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"></wm-form-field>
+                            <wm-form-field name="form_field8" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" pc-display="true" mobile-display="true" widget="number" inputtype="number"
+                            regexp=".*" placeholder="Enter value"></wm-form-field>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="glyphicon glyphicon-save" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3" heading="Orders">
+                    <wm-livegrid name="ProductorderLivegrid4" service="eshopping@Productorder" formlayout="dialog">
+                        <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="ProductorderGrid4" dataset="bind:Variables.EshoppingProductorderData.dataSet" showrecordcount="true" gridsearch="false"
+                        showrowindex="false" class="panel-default">
+                            <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="status" caption="Status" type="string" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.id" caption="User Id" type="integer" primary-key="true" generator="identity" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.landmark" caption="User Landmark" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.phone" caption="User Phone" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.pin" caption="User Pin" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.email" caption="User Email" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.street" caption="User Street" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.name" caption="User Name" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="user.productBought" caption="User Product Bought" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="glyphicon glyphicon-plus" title="New" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Details" name="ProductorderLiveform4" dataset="bind:Variables.EshoppingProductorderData.dataSet" formlayout="dialog" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow19">
+                                    <wm-gridcolumn show="hide" name="gridcolumn19" columnwidth="12">
+                                        <wm-form-field display-name="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" readonly="true" required="true" name="form_field19"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn show="show" name="gridcolumn20" columnwidth="12">
+                                        <wm-form-field display-name="Status" show="true" primary-key="false" generator="assigned" key="status" type="string" maxvalue="255" is-related="false" readonly="false" required="true" name="form_field20"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow20">
+                                    <wm-gridcolumn show="show" name="gridcolumn21" columnwidth="12">
+                                        <wm-form-field display-name="User" show="true" primary-key="false" generator="assigned" key="user" type="list" is-related="true" readonly="false" required="true" name="form_field21"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                    <wm-livegrid name="OrderdetailLivegrid5" service="eshopping@Orderdetail" formlayout="dialog">
+                        <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="OrderdetailGrid5" dataset="bind:Variables.EshoppingOrderdetailData.dataSet" gridsearch="false" showrecordcount="true"
+                        class="panel-default">
+                            <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="quantity" caption="Quantity" type="integer" generator="assigned" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="productorder.id" caption="Productorder Id" type="integer" primary-key="true" generator="identity" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="productorder.status" caption="Productorder Status" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.id" caption="Product Id" type="integer" primary-key="true" generator="identity" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.imgUrl" caption="Product Img Url" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.category" caption="Product Category" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.price" caption="Product Price" type="double" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.description" caption="Product Description" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-column binding="product.name" caption="Product Name" type="string" generator="assigned" readonly="false" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="glyphicon glyphicon-plus" title="New" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Details" name="OrderdetailLiveform5" dataset="bind:Variables.EshoppingOrderdetailData.dataSet" formlayout="dialog" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid4">
+                                <wm-gridrow name="gridrow22">
+                                    <wm-gridcolumn show="hide" name="gridcolumn22" columnwidth="12">
+                                        <wm-form-field display-name="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" readonly="true" required="true" name="form_field22"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn show="show" name="gridcolumn23" columnwidth="12">
+                                        <wm-form-field display-name="Productorder" show="true" primary-key="false" generator="assigned" key="productorder" type="list" is-related="true" readonly="false" required="true" name="form_field23"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow23">
+                                    <wm-gridcolumn show="show" name="gridcolumn24" columnwidth="12">
+                                        <wm-form-field display-name="Product" show="true" primary-key="false" generator="assigned" key="product" type="list" is-related="true" readonly="false" required="true" name="form_field24"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow24">
+                                    <wm-gridcolumn show="show" name="gridcolumn25" columnwidth="12">
+                                        <wm-form-field display-name="Quantity" show="true" primary-key="false" generator="assigned" key="quantity" type="integer" is-related="false" readonly="false" required="true" name="form_field25"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>

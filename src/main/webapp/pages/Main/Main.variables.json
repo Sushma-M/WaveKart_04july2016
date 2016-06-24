@@ -1,0 +1,415 @@
+{
+  "HotpicksImages" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-HotpicksImages-staticImages-staticVariable1-wm.Variable-1451887451982",
+    "name" : "HotpicksImages",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "dataValue" : "Smartphones",
+      "imageURL" : "resources/images/imagelists/smartphones_category.png"
+    }, {
+      "dataValue" : "Cameras",
+      "imageURL" : "resources/images/imagelists/cameras_category.png"
+    }, {
+      "dataValue" : "Laptops",
+      "imageURL" : "resources/images/imagelists/laptops_category.png"
+    } ]
+  },
+  "cameras_list" : {
+    "firstRow" : 0,
+    "isList" : false,
+    "package" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+    "type" : "Product",
+    "startUpdate" : true,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryFields" : [ "id" ],
+      "columns" : [ {
+        "scale" : 0,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "IMG_URL",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "imgUrl",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "CATEGORY",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "category",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 22,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "PRICE",
+        "notNull" : true,
+        "type" : "double",
+        "fieldName" : "price",
+        "fullyQualifiedType" : "double"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "DESCRIPTION",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "description",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "NAME",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "name",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "AVAILABILITY",
+        "notNull" : true,
+        "type" : "boolean",
+        "fieldName" : "availability",
+        "fullyQualifiedType" : "boolean"
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+      "entityName" : "Product"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-cameras_list-wm.LiveVariable-1449055344533",
+    "tableName" : "PRODUCT",
+    "name" : "cameras_list",
+    "designMaxResults" : 3,
+    "relatedTables" : [ ],
+    "liveSource" : "eshopping",
+    "inFlightBehavior" : "executeLast",
+    "properties" : [ ],
+    "maxResults" : 3,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ {
+      "value" : "Cameras",
+      "target" : "category",
+      "type" : "string"
+    } ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  },
+  "laptops_list" : {
+    "firstRow" : 0,
+    "isList" : false,
+    "package" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+    "type" : "Product",
+    "startUpdate" : true,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryFields" : [ "id" ],
+      "columns" : [ {
+        "scale" : 0,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "IMG_URL",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "imgUrl",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "CATEGORY",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "category",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 22,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "PRICE",
+        "notNull" : true,
+        "type" : "double",
+        "fieldName" : "price",
+        "fullyQualifiedType" : "double"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "DESCRIPTION",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "description",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "NAME",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "name",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "AVAILABILITY",
+        "notNull" : true,
+        "type" : "boolean",
+        "fieldName" : "availability",
+        "fullyQualifiedType" : "boolean"
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+      "entityName" : "Product"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-laptops_list-wm.LiveVariable-1449055287096",
+    "tableName" : "PRODUCT",
+    "name" : "laptops_list",
+    "designMaxResults" : 3,
+    "relatedTables" : [ ],
+    "liveSource" : "eshopping",
+    "inFlightBehavior" : "executeLast",
+    "properties" : [ ],
+    "maxResults" : 3,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ {
+      "value" : "Laptops",
+      "target" : "category",
+      "type" : "string"
+    } ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  },
+  "DealsImages" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-Deals-staticImages2-wm.Variable-1451892228670",
+    "name" : "DealsImages",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "dataValue" : "Accessories",
+      "imageURL" : "resources/images/imagelists/accessories__category.png"
+    }, {
+      "dataValue" : "Peripherals",
+      "imageURL" : "resources/images/imagelists/peripherals_category.png"
+    } ]
+  },
+  "smartphones_list" : {
+    "firstRow" : 0,
+    "isList" : false,
+    "bindCount" : 0,
+    "package" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+    "type" : "Product",
+    "startUpdate" : true,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryFields" : [ "id" ],
+      "columns" : [ {
+        "scale" : 0,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "IMG_URL",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "imgUrl",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "CATEGORY",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "category",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 22,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "PRICE",
+        "notNull" : true,
+        "type" : "double",
+        "fieldName" : "price",
+        "fullyQualifiedType" : "double"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "DESCRIPTION",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "description",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 0,
+        "precision" : 0,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "NAME",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "name",
+        "fullyQualifiedType" : "string"
+      }, {
+        "scale" : 2,
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "generator" : "assigned",
+        "columnName" : "AVAILABILITY",
+        "notNull" : true,
+        "type" : "boolean",
+        "fieldName" : "availability",
+        "fullyQualifiedType" : "boolean"
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.wavemaker.sampleapps.wavekart.eshopping.Product",
+      "entityName" : "Product"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-smartphones_list-wm.LiveVariable-1449051748246",
+    "tableName" : "PRODUCT",
+    "name" : "smartphones_list",
+    "designMaxResults" : 3,
+    "relatedTables" : [ ],
+    "liveSource" : "eshopping",
+    "inFlightBehavior" : "executeLast",
+    "properties" : [ ],
+    "maxResults" : 3,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ {
+      "value" : "Smartphones",
+      "target" : "category",
+      "type" : "string"
+    } ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  }
+}

@@ -1,0 +1,97 @@
+<wm-page name="page1" data-ng-controller="MainPageController" pagetitle="Main">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-panel name="panel1" title="Deals of the Day">
+                <wm-carousel height="170" name="carousel1" horizontalalign="center" animationinterval="3" padding="unset 10px">
+                    <wm-carousel-content name="carousel_content1" horizontalalign="center" padding="unset 15px">
+                        <wm-picture width="70%" name="picture1" pictureaspect="Both" shape="rounded" picturesource="resources/images/imagelists/cameras_banner.png"></wm-picture>
+                    </wm-carousel-content>
+                    <wm-carousel-content name="carousel_content2" horizontalalign="center" padding="unset 15px">
+                        <wm-picture width="80%" name="picture2" pictureaspect="Both" shape="rounded" picturesource="resources/images/imagelists/phones_banner.png"></wm-picture>
+                    </wm-carousel-content>
+                    <wm-carousel-content name="carousel_content3" horizontalalign="center" padding="unset 15px">
+                        <wm-picture width="80%" name="picture3" pictureaspect="Both" shape="rounded" picturesource="resources/images/imagelists/peripherals_banner.png"></wm-picture>
+                    </wm-carousel-content>
+                </wm-carousel>
+            </wm-panel>
+            <wm-panel name="panel2" title="Hot Picks">
+                <wm-layoutgrid name="layoutgrid1" columns="3" borderstyle="none" padding="unset unset unset 15px">
+                    <wm-gridrow name="gridrow4_1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn9" padding="5px 5px 5px unset">
+                            <wm-livelist listclass="media-list" dataset="bind:Variables.HotpicksImages.dataSet" name="categorylist1" itemsperrow="3" on-click="ProductsbyCategory;goToPage_ProductsList" width="100%">
+                                <wm-listtemplate layout="media" name="listtemplate5" width="100%">
+                                    <wm-container class="media-left media-top" name="container11_1" width="100%">
+                                        <wm-picture picturesource="bind:Variables.HotpicksImages.dataSet[$i].imageURL" name="Picture" class="media-object" width="120%" hint="bind:Variables.HotpicksImages.dataSet[$i].dataValue" margin="10px 10px 10px unset"
+                                        padding="unset 10px"></wm-picture>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow5">
+                        <wm-gridcolumn colwidth="4" name="gridcolumn13">
+                            <wm-livelist listclass="media-list" itemclass="media" name="livelist1" dataset="bind:Variables.smartphones_list.dataSet" width="100%" borderstyle="solid" on-click="goToPage_Products" padding="unset unset unset 5px">
+                                <wm-listtemplate layout="media" name="listtemplate1">
+                                    <wm-container class="media-left" name="container5" horizontalalign="center">
+                                        <wm-picture class="media-object picture" name="picture8" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.smartphones_list.dataSet.data[$i].imgUrl" height="8em"
+                                        padding="10px unset unset 10px"></wm-picture>
+                                    </wm-container>
+                                    <wm-container class="media-body" data-template-ctr="true" name="container6" horizontalalign="left" padding="10px">
+                                        <wm-label width="100%" caption="bind:Variables.smartphones_list.dataSet.data[$i].name" name="label5" fontsize="1.2" fontunit="em"></wm-label>
+                                        <wm-label width="100%" caption="bind:Variables.smartphones_list.dataSet.price | toCurrency: '$'" name="label6" fontsize="1.5" fontunit="em"></wm-label>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn colwidth="4" name="gridcolumn14">
+                            <wm-livelist listclass="media-list" itemclass="media" name="livelist2" dataset="bind:Variables.cameras_list.dataSet" on-click="goToPage_Products" padding="unset unset unset 5px">
+                                <wm-listtemplate layout="media" name="listtemplate2">
+                                    <wm-container class="media-left" name="container16">
+                                        <wm-picture class="media-object picture" name="picture12" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.cameras_list.dataSet.data[$i].imgUrl" height="8em"
+                                        padding="10px unset unset 10px"></wm-picture>
+                                    </wm-container>
+                                    <wm-container class="media-body" data-template-ctr="true" name="container17" padding="10px">
+                                        <wm-label width="100%" caption="bind:Variables.cameras_list.dataSet.name" name="label17" fontsize="1.2" fontunit="em"></wm-label>
+                                        <wm-label width="100%" caption="bind:Variables.cameras_list.dataSet.price | toCurrency: '$'" name="label15" fontsize="1.5" fontunit="em"></wm-label>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn colwidth="4" name="gridcolumn15">
+                            <wm-livelist listclass="media-list" itemclass="media" name="livelist3" dataset="bind:Variables.laptops_list.dataSet" on-click="goToPage_Products" padding="unset unset unset 5px">
+                                <wm-listtemplate layout="media" name="listtemplate3">
+                                    <wm-container class="media-left" name="container10">
+                                        <wm-picture class="media-object picture" name="picture10" height="8em" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.laptops_list.dataSet.data[$i].imgUrl"
+                                        padding="10px unset unset 10px"></wm-picture>
+                                    </wm-container>
+                                    <wm-container class="media-body" data-template-ctr="true" name="container11" padding="10px">
+                                        <wm-label width="100%" caption="bind:Variables.laptops_list.dataSet.name" name="label10" fontsize="1.2" fontunit="em"></wm-label>
+                                        <wm-label width="100%" caption="bind:Variables.laptops_list.dataSet.price | toCurrency: '$'" name="label8" fontsize="1.5" fontunit="em"></wm-label>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-panel>
+            <wm-panel name="panel3" title="Deals">
+                <wm-layoutgrid name="layoutgrid3" padding="unset unset unset 15px">
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                            <wm-livelist listclass="media-list" dataset="bind:Variables.DealsImages.dataSet" name="categirylist2" itemsperrow="2" on-click="ProductsbyCategory;goToPage_ProductsList" padding="10px" width="100%">
+                                <wm-listtemplate layout="media" name="listtemplate5_1" width="100%">
+                                    <wm-container class="media-left media-top" name="container11_2" width="100%">
+                                        <wm-picture picturesource="bind:Variables.DealsImages.dataSet[$i].imageURL" name="Picture" class="media-object" width="115%" hint="bind:Variables.DealsImages.dataSet[$i].dataValue" margin="10px 10px 10px unset" padding="unset 10px"></wm-picture>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-panel>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>

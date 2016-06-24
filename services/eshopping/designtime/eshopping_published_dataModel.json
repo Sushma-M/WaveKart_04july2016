@@ -1,0 +1,605 @@
+{
+  "name" : "eshopping",
+  "description" : "eshopping",
+  "packageName" : "com.wavemaker.sampleapps.wavekart.eshopping",
+  "draft" : false,
+  "tables" : [ {
+    "name" : "PRODUCT",
+    "oldName" : "PRODUCT",
+    "entityName" : "Product",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "IMG_URL",
+      "oldName" : "IMG_URL",
+      "fieldName" : "imgUrl",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "CATEGORY",
+      "oldName" : "CATEGORY",
+      "fieldName" : "category",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PRICE",
+      "oldName" : "PRICE",
+      "fieldName" : "price",
+      "sqlType" : "number",
+      "javaType" : "double",
+      "length" : 255,
+      "precision" : 22,
+      "scale" : 2,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "DESCRIPTION",
+      "oldName" : "DESCRIPTION",
+      "fieldName" : "description",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "AVAILABILITY",
+      "oldName" : "AVAILABILITY",
+      "fieldName" : "availability",
+      "sqlType" : "boolean",
+      "javaType" : "boolean",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 2,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "SYS_PK_10092",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "PRODUCTIDFKEY",
+      "fieldName" : "itemorders",
+      "cardinality" : "OneToMany",
+      "sourceTable" : "PRODUCT",
+      "targetTable" : "ITEMORDER",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "PRODUCT_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    }, {
+      "name" : "PRODUCTIDFORKEY",
+      "fieldName" : "orderdetails",
+      "cardinality" : "OneToMany",
+      "sourceTable" : "PRODUCT",
+      "targetTable" : "ORDERDETAIL",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "PRODUCT_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : [ ]
+  }, {
+    "name" : "ITEMORDER",
+    "oldName" : "ITEMORDER",
+    "entityName" : "Itemorder",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "PRODUCT_ID",
+      "oldName" : "PRODUCT_ID",
+      "fieldName" : "product",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "STATUS",
+      "oldName" : "STATUS",
+      "fieldName" : "status",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "USER_ID",
+      "oldName" : "USER_ID",
+      "fieldName" : "user",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "QUANTITY",
+      "oldName" : "QUANTITY",
+      "fieldName" : "quantity",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "SYS_PK_10131",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "PRODUCTIDFKEY",
+      "fieldName" : "product",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "ITEMORDER",
+      "targetTable" : "PRODUCT",
+      "mappings" : [ {
+        "sourceColumn" : "PRODUCT_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "USERIDFKEY",
+      "fieldName" : "user",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "ITEMORDER",
+      "targetTable" : "USER",
+      "mappings" : [ {
+        "sourceColumn" : "USER_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : [ ]
+  }, {
+    "name" : "USER",
+    "oldName" : "USER",
+    "entityName" : "User",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "LANDMARK",
+      "oldName" : "LANDMARK",
+      "fieldName" : "landmark",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PHONE",
+      "oldName" : "PHONE",
+      "fieldName" : "phone",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 15,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PIN",
+      "oldName" : "PIN",
+      "fieldName" : "pin",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "EMAIL",
+      "oldName" : "EMAIL",
+      "fieldName" : "email",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "STREET",
+      "oldName" : "STREET",
+      "fieldName" : "street",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PRODUCT_BOUGHT",
+      "oldName" : "PRODUCT_BOUGHT",
+      "fieldName" : "productBought",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PASSWORD",
+      "oldName" : "PASSWORD",
+      "fieldName" : "password",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "COUNTRY",
+      "oldName" : "COUNTRY",
+      "fieldName" : "country",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "CITY",
+      "oldName" : "CITY",
+      "fieldName" : "city",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "ROLE",
+      "oldName" : "ROLE",
+      "fieldName" : "role",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "SYS_PK_10106",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "USERIDFKEY",
+      "fieldName" : "itemorders",
+      "cardinality" : "OneToMany",
+      "sourceTable" : "USER",
+      "targetTable" : "ITEMORDER",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "USER_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    }, {
+      "name" : "USERIDFORKEY",
+      "fieldName" : "productorders",
+      "cardinality" : "OneToMany",
+      "sourceTable" : "USER",
+      "targetTable" : "PRODUCTORDER",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "USER_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : [ ]
+  }, {
+    "name" : "PRODUCTORDER",
+    "oldName" : "PRODUCTORDER",
+    "entityName" : "Productorder",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "STATUS",
+      "oldName" : "STATUS",
+      "fieldName" : "status",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "USER_ID",
+      "oldName" : "USER_ID",
+      "fieldName" : "user",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "SYS_PK_10147",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "USERIDFORKEY",
+      "fieldName" : "user",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "PRODUCTORDER",
+      "targetTable" : "USER",
+      "mappings" : [ {
+        "sourceColumn" : "USER_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "ORDERIDFKEY",
+      "fieldName" : "orderdetails",
+      "cardinality" : "OneToMany",
+      "sourceTable" : "PRODUCTORDER",
+      "targetTable" : "ORDERDETAIL",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "ORDER_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : [ ]
+  }, {
+    "name" : "ORDERDETAIL",
+    "oldName" : "ORDERDETAIL",
+    "entityName" : "Orderdetail",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "ORDER_ID",
+      "oldName" : "ORDER_ID",
+      "fieldName" : "productorder",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PRODUCT_ID",
+      "oldName" : "PRODUCT_ID",
+      "fieldName" : "product",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "QUANTITY",
+      "oldName" : "QUANTITY",
+      "fieldName" : "quantity",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "SYS_PK_10157",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "PRODUCTIDFORKEY",
+      "fieldName" : "product",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "ORDERDETAIL",
+      "targetTable" : "PRODUCT",
+      "mappings" : [ {
+        "sourceColumn" : "PRODUCT_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "ORDERIDFKEY",
+      "fieldName" : "productorder",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "ORDERDETAIL",
+      "targetTable" : "PRODUCTORDER",
+      "mappings" : [ {
+        "sourceColumn" : "ORDER_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : [ ]
+  } ]
+}

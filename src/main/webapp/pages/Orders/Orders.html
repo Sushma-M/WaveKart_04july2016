@@ -1,0 +1,52 @@
+<wm-page name="page1" data-ng-controller="OrdersPageController" pagetitle="Orders"> 
+    <wm-header name="header1" content="header"></wm-header> 
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav> 
+    <wm-content name="content1_1"> 
+        <wm-content name="content1" height="100%"> 
+            <wm-page-content paddingleft="0" paddingright="0" paddingtop="0" paddingbottom="0" columnwidth="12" name="OrderPageContent"> 
+                <wm-label caption="No Orders" name="no_orders_text" marginunit="em" fontsize="2" fontunit="em" show="false"></wm-label> 
+                <wm-label caption="My Orders" name="my_orders_text" marginunit="em" fontsize="2" fontunit="em" show="false"></wm-label> 
+                <wm-layoutgrid name="layoutgrid1" class="well" fontweight="bold" marginleft="5"> 
+                    <wm-gridrow name="row2"> 
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn10"></wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="5" name="gridcolumn2" fontweight="bold"> 
+                            <wm-label name="order_items_name" caption="Product Name" fontweight="bold" fontsize="15" marginleft="5"></wm-label> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn horizontalalign="center" columnwidth="2" name="gridcolumn3"> 
+                            <wm-label name="order_items_quantity" caption="Quantity" fontsize="15" fontweight="bold" marginleft="5"></wm-label> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn horizontalalign="left" columnwidth="2" name="gridcolumn4"> 
+                            <wm-label name="order_items_status" caption="Status" fontsize="15" fontweight="bold"></wm-label> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn horizontalalign="center" columnwidth="1" name="gridcolumn5"></wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+                <wm-livelist listclass="list-group" itemclass="list-group-item" dataset="bind:Variables.EshoppingExecute_OrderedLists.dataSet" name="livelist2" navigation="Advanced"> 
+                    <wm-listtemplate layout="inline" name="listtemplate2"> 
+                        <wm-layoutgrid class="inline" name="layoutgrid3"> 
+                            <wm-gridrow name="gridrow3"> 
+                                <wm-gridcolumn class="text-center col-xs-3" columnwidth="2" data-template-ctr="true" name="gridcolumn11" paddingright="5"> 
+                                    <wm-picture height="5em" name="Picture" shape="thumbnail" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.EshoppingExecute_OrderedLists.dataSet.PROD_IMG" borderstyle="none"></wm-picture> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn class="col-xs-9" name="gridcolumn12" columnwidth="10"> 
+                                    <wm-gridcolumn columnwidth="5" data-template-ctr="true" class="col-xs-12" name="gridcolumn14"> 
+                                        <wm-label name="prodname" width="100%" caption="bind:Variables.EshoppingExecute_OrderedLists.dataSet.NAME" margintop="15"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="2" data-template-ctr="true" class="col-xs-12" name="gridcolumn17" horizontalalign="right"> 
+                                        <wm-label name="quantity" width="100%" caption="bind:Variables.EshoppingExecute_OrderedLists.dataSet.QUANTITY" marginleft="5" margintop="15"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="2" data-template-ctr="true" class="col-xs-12" name="gridcolumn18" horizontalalign="right"> 
+                                        <wm-label name="City" width="100%" caption="bind:Variables.EshoppingExecute_OrderedLists.dataSet.STATUS" marginleft="5" margintop="15"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="2" data-template-ctr="true" class="col-xs-12" name="gridcolumn19" horizontalalign="right"> 
+                                        <wm-button class="btn-default" caption="" type="button" name="button2" iconclass="fa fa-trash-o fa-2x" borderstyle="none" on-click="EshoppingExecuteCancelled" show="bind:Variables.EshoppingExecute_OrderedLists.dataSet.STATUS!='Cancelled'"></wm-button> 
+                                    </wm-gridcolumn> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-listtemplate> 
+                </wm-livelist> 
+            </wm-page-content> 
+        </wm-content> 
+    </wm-content> 
+</wm-page>
